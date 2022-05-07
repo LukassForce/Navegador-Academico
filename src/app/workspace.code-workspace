@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\Proyecto Ing Web\\app"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "app"
+	}
+}
