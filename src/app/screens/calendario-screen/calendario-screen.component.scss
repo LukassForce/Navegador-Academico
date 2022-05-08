@@ -1,0 +1,43 @@
+html{
+    // background-color: rgb(234, 236, 238);
+}
+ol {
+    padding: 0px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+div {
+    text-align: center;
+    width: 300px;
+    margin-left: 5px;
+}
+
+.firstDay {
+    grid-column: 6;
+}
+
+li {
+    text-align: right;
+}
+
+.weekDays {
+    background-color: rgb(169, 107, 228);
+    font-weight: bold;
+    text-align: center;
+}
+
+aside li {
+    list-style: none;
+    text-align: left;
+}
+
+.logo {
+    align-items: right;
+    width: 80px;
+    margin-top: 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
