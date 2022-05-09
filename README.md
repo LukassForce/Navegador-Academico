@@ -22,4 +22,6 @@ evaluada por una persona determinada, esta justificación puede ser resuelta, ya
 aceptada o rechazada. Cada alumno o estudiante, podra crear, modificar y/o eliminar estas justificaciones,
 antes de que estas sean resueltas.
 
+El diseño de la pagina usando Figma: https://www.figma.com/file/46j6X5rjto8b4cRSgokdw5/Proyecto-Navegador-Academico?node-id=0%3A1
+
 
