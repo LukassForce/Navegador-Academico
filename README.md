@@ -19,4 +19,7 @@ una forma más directa y al instante, a diferencia de como se haría a través d
 electrónico.
 - Función de justificación, en esta sección se podrá justificar una inasistencia, la cual será
 evaluada por una persona determinada, esta justificación puede ser resuelta, ya sea siendo
-aceptada o rechazada.
+aceptada o rechazada. Cada alumno o estudiante, podra crear, modificar y/o eliminar estas justificaciones,
+antes de que estas sean resueltas.
+
+
