@@ -9,6 +9,8 @@ import { HorarioScreenComponent } from './screens/horario-screen/horario-screen.
 import { CalendarioScreenComponent } from './screens/calendario-screen/calendario-screen.component';
 import { LoginScreenComponent } from './screens/login-screen/login-screen.component';
 import { ChatScreenComponent } from './screens/chat-screen/chat-screen.component';
+import { JustificarScreenComponent } from './screens/justificar-screen/justificar-screen.component';
+import { JustificarComponent } from './components/justificar/justificar.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ChatScreenComponent } from './screens/chat-screen/chat-screen.component
     CalendarioScreenComponent,
     LoginScreenComponent,
     ChatScreenComponent,
+    JustificarScreenComponent,
+    JustificarComponent,
   ],
   imports: [
     BrowserModule,
