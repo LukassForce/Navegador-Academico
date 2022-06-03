@@ -11,6 +11,10 @@ import { LoginScreenComponent } from './screens/login-screen/login-screen.compon
 import { ChatScreenComponent } from './screens/chat-screen/chat-screen.component';
 import { JustificarScreenComponent } from './screens/justificar-screen/justificar-screen.component';
 import { JustificarComponent } from './components/justificar/justificar.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { AppMaterialModule } from './app-material/app-material.module';
 
 @NgModule({
   declarations: [
@@ -23,10 +27,15 @@ import { JustificarComponent } from './components/justificar/justificar.componen
     ChatScreenComponent,
     JustificarScreenComponent,
     JustificarComponent,
+    CalendarComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AppMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
