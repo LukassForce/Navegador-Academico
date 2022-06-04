@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, RequiredValidator, Validators } from '@angular/forms';
+import { readFileSync, writeFileSync} from 'fs';
+
+
 import { listUsers, Justificacion } from 'src/app/Interface/usuario';
+
 
 @Component({
   selector: 'app-justificar',
@@ -17,6 +21,7 @@ export class JustificarComponent implements OnInit {
   asunto:AbstractControl;
   mensaje:AbstractControl;
   listaJustificacion:Array<Justificacion>;
+  
   
   constructor(public fb:FormBuilder) { 
     this.formulario=this.fb.group({
@@ -48,5 +53,18 @@ export class JustificarComponent implements OnInit {
     }
     this.listaJustificacion.push(justifi);
     console.log(this.listaJustificacion);
+    this.saveJust(this.listaJustificacion);
+  }
+
+  saveJust(Justificacion: Justificacion[]){
+    let finished = (error: any) => {
+      if(error){
+        console.error(error)
+        return
+      }
+    }
+    
+    let jsonData = JSON.stringify(Justificacion);
+    writeFileSync("justificacion.json", jsonData);
   }
 }
