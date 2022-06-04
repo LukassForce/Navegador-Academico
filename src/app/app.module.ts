@@ -14,7 +14,6 @@ import { JustificarComponent } from './components/justificar/justificar.componen
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppMaterialModule } from './app-material/app-material.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +27,7 @@ import { AppMaterialModule } from './app-material/app-material.module';
     JustificarScreenComponent,
     JustificarComponent,
     CalendarComponent,
+  
 
   ],
   imports: [
@@ -35,7 +35,6 @@ import { AppMaterialModule } from './app-material/app-material.module';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    AppMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

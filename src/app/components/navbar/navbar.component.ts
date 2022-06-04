@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  show(){ 
+
+    var path = window.location.pathname;
+    if(path == '/login'){
+      return false;
+    }
+    return true;
   }
 
 }
