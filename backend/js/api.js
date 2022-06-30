@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
     user: 'root',
     port: 3306,
     password: '',
-    database: 'justificacion'
+    database: 'navegador'
 });
 connection.connect(function (error) {
     if (error) {
@@ -24,11 +24,22 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Escuchando en puerto ${port}`);
 });
-app.get('/justificacion', (req, res) => {
+//Obtener justificacion por id;
+app.get('/justificacion/:id', (req, res) => {
     connection.query('SELECT * FROM justificacion', (req1, res1) => {
         if (res1 == null) {
             res.send('No existe informacion');
         }
-        res.send(res1);
+        res.status(200).send(res1);
+    });
+});
+app.post('/crearJustificacion', (req, res) => {
+});
+//obtener usuario por su id
+app.get('/usuario/:nameId', (req, res) => {
+    let nameId = req.params.nameid;
+    console.log(nameId);
+    connection.query("SELECT * FROM usuario WHERE id = ?", nameId, (req1, res1) => {
+        res.status(200).send(res1);
     });
 });

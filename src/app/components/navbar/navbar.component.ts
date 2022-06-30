@@ -13,13 +13,12 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  show(){ 
+  show() {
 
     var path = window.location.pathname;
-    if(path == '/login'){
+    if (path == '/login') {
       return false;
     }
     return true;
   }
-
 }
