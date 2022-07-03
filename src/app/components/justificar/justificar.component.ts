@@ -74,4 +74,8 @@ export class JustificarComponent implements OnInit {
     this.servicioCliente.eliminarJustificacion(id).subscribe();
     this.listaJustificacion = this.listaJustificacion.filter(x => x.id != id);
   }
+
+  editar(id:any){
+    this
+  }
 }
