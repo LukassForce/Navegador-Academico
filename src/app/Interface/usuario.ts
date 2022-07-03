@@ -1,8 +1,9 @@
-export interface Justificacion{
+export interface Usuario{
+    id:number;
+    rut:string;
+    password:string;
     nombre:string;
     apellido:string;
     curso:string;
-    asunto:string;
-    mensaje:string;
 }
-export let listUsers:Array<Justificacion> = [];
+export let listUsers:Array<Usuario> = [];

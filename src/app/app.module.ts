@@ -13,6 +13,7 @@ import { JustificarScreenComponent } from './screens/justificar-screen/justifica
 import { JustificarComponent } from './components/justificar/justificar.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

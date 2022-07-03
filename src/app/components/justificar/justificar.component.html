@@ -1,64 +1,120 @@
-<form [formGroup]="formulario" class="needs-validation"  novalidate>
-  <div class="form-row offset-md-1">
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom01">Nombre</label>
-      <input
-        type="text"
-        class="form-control"
-        id="validationCustom01"
-        placeholder="Nombre"
-        formControlName="nombre"
-        required
-      />
+<div class="contenedor">
+  <div class="formulario col-md-4">
+    <form [formGroup]="formulario" class="needs-validation" novalidate>
+      <div>
+        <div class="mb-3 col-md-5">
+          <label for="validationCustom01">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            placeholder="Nombre"
+            formControlName="nombre"
+            required
+          />
+        </div>
+        <div class="mb-3 col-md-4">
+          <label for="validationCustom02">Apellido</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom02"
+            placeholder="Apellido"
+            formControlName="apellido"
+            required
+          />
+        </div>
+      </div>
+      <div>
+        <div class="mb-3 col-md-3">
+          <label for="validationCustom03">Curso</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom03"
+            placeholder="Curso"
+            formControlName="curso"
+            required
+          />
+        </div>
+        <div class="mb-2 col-md-5">
+          <label for="validationCustom04">Asunto</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom04"
+            placeholder="Asunto"
+            formControlName="asunto"
+            required
+          />
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="form-group mb-3 col-md-10">
+          <label for="exampleFormControlTextarea1">Mensaje</label>
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            placeholder="Escriba aqui su Mensaje"
+            formControlName="mensaje"
+          ></textarea>
+        </div>
+      </div>
+      <button
+        class="btn btn-principalColor"
+        type="button"
+        (click)="crearJust()"
+      >
+        Enviar Justificacion.
+      </button>
+    </form>
+  </div>
+  <div class="lista">
+    <div *ngIf="flag" class="bd-example table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Asunto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let item of listaJustificacion; let id = index">
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.curso }}</td>
+            <td>{{ item.asunto }}</td>
+            <td>
+              <button type="button" class="btn btn-outline-danger" (click)="eliminarJustificacion(item.id)">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-x-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                  ></path>
+                  <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                  ></path>
+                </svg>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom02">Apellido</label>
-      <input
-        type="text"
-        class="form-control"
-        id="validationCustom02"
-        placeholder="Apellido"
-        formControlName="apellido"
-        required
-      />
+    <div id="mostrar">
+      <button
+        class="btn btn-principalColor"
+        type="button"
+        (click)="mostrarJustificacion()"
+      >
+        Mostrar Justificaciones.
+      </button>
     </div>
   </div>
-  <div class="form-row offset-md-1">
-    <div class="col-md-3 mb-3">
-      <label for="validationCustom03">Curso</label>
-      <input
-        type="text"
-        class="form-control"
-        id="validationCustom03"
-        placeholder="Curso"
-        formControlName="curso"
-        required
-      />
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationCustom04">Asunto</label>
-      <input
-        type="text"
-        class="form-control"
-        id="validationCustom04"
-        placeholder="Asunto"
-        formControlName="asunto"
-        required
-      />
-      <div class="invalid-feedback"></div>
-    </div>
-    <div class="form-group col-md-3 mb-3">
-      <label for="exampleFormControlTextarea1">Mensaje</label>
-      <textarea
-        class="form-control"
-        id="exampleFormControlTextarea1"
-        rows="3"
-        placeholder="Escriba aqui su Mensaje"
-        formControlName="mensaje"
-      ></textarea>
-    </div>
-  </div>
-  <button class="btn btn-principalColor offset-md-1" type="button" (click)="crearJust()">
-    Enviar Justificacion.
-  </button>
-</form>
+</div>

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, RequiredValidator, Validators } from '@angular/forms';
 import { readFileSync, writeFileSync} from 'fs';
+import { ServiceService } from '../../service/justificacion-service/service.service'
 
-
-import { listUsers, Justificacion } from 'src/app/Interface/usuario';
+import { listUsers, Justificacion } from 'src/app/Interface/justificacion';
 
 
 @Component({
@@ -20,10 +20,12 @@ export class JustificarComponent implements OnInit {
   curso:AbstractControl;
   asunto:AbstractControl;
   mensaje:AbstractControl;
-  listaJustificacion:Array<Justificacion>;
+  listaJustificacion:Array<Justificacion> = [];
+  flag = false;
   
   
-  constructor(public fb:FormBuilder) { 
+  constructor(public fb:FormBuilder, private servicioCliente:ServiceService) { 
+
     this.formulario=this.fb.group({
       nombre:['',Validators.required],
       apellido:['',Validators.required],
@@ -41,30 +43,35 @@ export class JustificarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   crearJust(){
-    let justifi:Justificacion={
+    this.servicioCliente.crearJustificacion( {   
+      id: 0,
       nombre: this.nombre.value,
       apellido: this.apellido.value,
       curso: this.curso.value,
       asunto: this.asunto.value,
-      mensaje: this.mensaje.value
-    }
-    this.listaJustificacion.push(justifi);
-    console.log(this.listaJustificacion);
-    this.saveJust(this.listaJustificacion);
+      mensaje: this.mensaje.value}).subscribe( respuesta =>{
+
+        console.log(respuesta);
+
+      });
   }
 
-  saveJust(Justificacion: Justificacion[]){
-    let finished = (error: any) => {
-      if(error){
-        console.error(error)
-        return
+  mostrarJustificacion(){
+
+    this.servicioCliente.obtenerJustificacion().subscribe(datos =>{
+      for(let i = 0; i < datos.length; i++){
+        this.listaJustificacion.push(datos[i]);
       }
-    }
-    
-    let jsonData = JSON.stringify(Justificacion);
-    writeFileSync("justificacion.json", jsonData);
+    })
+  }
+
+  eliminarJustificacion(id:any){
+    console.log(id)
+    this.servicioCliente.eliminarJustificacion(id).subscribe();
+    this.listaJustificacion = this.listaJustificacion.filter(x => x.id != id);
   }
 }

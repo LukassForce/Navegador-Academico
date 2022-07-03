@@ -51,6 +51,7 @@ export class CalendarComponent implements OnInit {
   }
 
   changeMonth(flag: any) {
+    
     if (flag < 0) {
       const prevDate = this.dateSelect.clone().subtract(1, "month");
       this.getDaysFromDate(prevDate.format("MM"), prevDate.format("YYYY"));
