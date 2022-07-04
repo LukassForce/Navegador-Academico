@@ -1,11 +1,11 @@
 import { send } from "process";
 import { cursorTo } from "readline";
 
-
-   
 require('dotenv').config({ path: "../.env"});
+
 const express = require('express');
 const mysql = require('mysql');
+
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
