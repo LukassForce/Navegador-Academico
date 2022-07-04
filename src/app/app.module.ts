@@ -14,6 +14,8 @@ import { JustificarComponent } from './components/justificar/justificar.componen
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EventosScreenComponent } from './screens/eventos-screen/eventos-screen.component';
+import { CalificacionesComponent } from './screens/calificaciones/calificaciones.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     JustificarScreenComponent,
     JustificarComponent,
     CalendarComponent,
+    EventosScreenComponent,
+    CalificacionesComponent,
   
 
   ],

@@ -6,6 +6,9 @@ import { CalendarioScreenComponent } from './screens/calendario-screen/calendari
 import { LoginScreenComponent } from './screens/login-screen/login-screen.component';
 import { ChatScreenComponent } from './screens/chat-screen/chat-screen.component';
 import { JustificarScreenComponent } from './screens/justificar-screen/justificar-screen.component';
+import { EventosScreenComponent } from './screens/eventos-screen/eventos-screen.component';
+import { CalificacionesComponent } from './screens/calificaciones/calificaciones.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,7 +17,9 @@ const routes: Routes = [
   { path: 'calendario', component: CalendarioScreenComponent},
   { path: 'login', component: LoginScreenComponent },
   { path: 'chat', component: ChatScreenComponent},
-  { path: 'justificar', component: JustificarScreenComponent}
+  { path: 'justificar', component: JustificarScreenComponent},
+  { path : 'eventos', component: EventosScreenComponent},
+  { path : 'calificaciones', component: CalificacionesComponent}
 ];
 
 @NgModule({
